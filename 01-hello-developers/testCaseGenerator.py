@@ -3,9 +3,9 @@ os.mkdir('./testCases')
 os.mkdir('./testCases/input')
 os.mkdir('./testCases/output')
 
-nouns = ['world', 'people', 'developers', 'DiPS', 'CodeJam', 'HackerRank']
+nouns = ['world', 'people', 'developers']
 
-for i in range(0, 6):
+for i in range(0, 3):
      n = str(i).zfill(2)
 
      inputFile = open(f'./testCases/input/input{n}.txt', 'a')
