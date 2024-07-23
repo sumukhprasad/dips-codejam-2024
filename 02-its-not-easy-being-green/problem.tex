@@ -1,0 +1,98 @@
+\documentclass[12pt]{report}
+\usepackage[a4paper, total={7.3in, 9.7in}]{geometry}
+\usepackage{amsmath}
+\usepackage{upquote}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{amssymb}
+
+\definecolor{backgroundcolor}{rgb}{1, 1, 1}
+\definecolor{commentstyle}{rgb}{0.365, 0.422, 0.475}
+\definecolor{keywordstyle}{rgb}{0.6, 0.14, 0.576}
+\definecolor{numberstyle}{rgb}{0.5, 0.5, 0.5}
+\definecolor{stringstyle}{rgb}{0.77, 0.1, 0.08}
+
+\lstdefinestyle{xcodecolor}{
+    backgroundcolor=\color{backgroundcolor},   
+    commentstyle=\color{commentstyle},
+    keywordstyle=\color{keywordstyle},
+    numberstyle=\scriptsize\color{numberstyle},
+    stringstyle=\color{stringstyle},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                   
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=xcodecolor}
+
+\usepackage[T1]{fontenc}
+\usepackage{cascadia-code}
+
+% Raised Rule Command:
+%  Arg 1 (Optional) - How high to raise the rule
+%  Arg 2            - Thickness of the rule
+\newcommand{\raisedrule}[2][0em]{\leaders\hbox{\rule[#1]{1pt}{#2}}\hfill}
+
+\setlength{\parindent}{0pt}
+\titleformat{\section}
+{\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\begin{document}
+
+	{\Large
+	\textbf{It's Not Easy Being Green}}
+	
+	\vspace{0.4cm}
+	DiPS CodeJam 24\raisedrule[0.25em]{1pt}
+	\\
+	% document
+
+	\section*{Prompt}
+	`It's not easy being green,' was the frequent refrain of Kermit the frog. 
+	
+	`It seems you blend in\\
+	With so many other ordinary things,'
+	
+	he says. Let's find him some friends, shall we? Each input is a string of length $n$ made up of numbers and uppercase letters. Your task is to find the number of 6-character substrings which, when read as a hex colour code, are shades of green. Substrings may overlap with each other.
+	
+	To determine whether a substring is a shade of green or not, check for the following conditions to be true:
+	\begin{itemize}
+		\item the amount of blue in the colour is less than 80\% of the amount of green
+		\item the amount of red in the colour is less than 64\% of the amount of green
+	\end{itemize}
+	
+	Given a string of length $n$, how many substrings can you find that satisfy the conditions?
+
+	\subsection*{Input Format}
+	\begin{itemize}
+		\item The first line of the input contains a string of length $n$ containing numbers and uppercase letters.
+	\end{itemize}
+	\subsection*{Output Format}
+	The first and only line of your output must contain a single integer $m$, denoting the the number of substrings that satisfy the conditions.
+	\subsection*{Constraints}
+	\begin{itemize}
+		\item $ 10^4 \le n \le 10^6 $
+	\end{itemize}
+
+\section*{Solution}
+\begin{itemize}
+	\item Start a counter at 0 to count the number of substrings that satisfy the condition
+	\item Iterate through every 6-letter substring
+	\item Check if the substring is in hexadecimal
+	\item If the substring is hexadecimal and satisfies the condition, increment the counter
+\end{itemize}
+
+
+\section*{Sample Program}
+\lstinputlisting[language=Python]{sampleSolution.py}
+	
+
+\end{document}
