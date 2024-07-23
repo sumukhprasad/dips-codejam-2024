@@ -34,13 +34,13 @@ for i in range(0, 20):
 	
 	inputFile = open(f'./testCases/input/input{testcase_number}.txt', 'a')
 	lines = []
-	n = random.randint(10**4, 10**6)
+	n = random.randint(10**3, 10**4)
 	lines.append(str(n))
 	for i in range(n):
 		a = random.randint(10**8, 10**10)
 		b = random.randint(10**8, 10**10) if random.randint(0, 1) else increment(a)
 		res = solve(a, b)
-		lines.append(f"{a} {b}")
+		lines.append(f"{a} {b}\n")
 		if res:
 			m+=1
 	inputFile.writelines(lines)
