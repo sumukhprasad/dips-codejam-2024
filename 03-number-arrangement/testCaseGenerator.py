@@ -35,7 +35,7 @@ for i in range(0, 20):
 	inputFile = open(f'./testCases/input/input{testcase_number}.txt', 'a')
 	lines = []
 	n = random.randint(10**3, 10**4)
-	lines.append(str(n))
+	lines.append(str(n)+"\n")
 	for i in range(n):
 		a = random.randint(10**8, 10**10)
 		b = random.randint(10**8, 10**10) if random.randint(0, 1) else increment(a)
