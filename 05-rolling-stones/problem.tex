@@ -1,0 +1,81 @@
+\documentclass[12pt]{report}
+\usepackage[a4paper, total={7.3in, 9.7in}]{geometry}
+\usepackage{amsmath}
+\usepackage{upquote}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{amssymb}
+
+\definecolor{backgroundcolor}{rgb}{1, 1, 1}
+\definecolor{commentstyle}{rgb}{0.365, 0.422, 0.475}
+\definecolor{keywordstyle}{rgb}{0.6, 0.14, 0.576}
+\definecolor{numberstyle}{rgb}{0.5, 0.5, 0.5}
+\definecolor{stringstyle}{rgb}{0.77, 0.1, 0.08}
+
+\lstdefinestyle{xcodecolor}{
+    backgroundcolor=\color{backgroundcolor},   
+    commentstyle=\color{commentstyle},
+    keywordstyle=\color{keywordstyle},
+    numberstyle=\scriptsize\color{numberstyle},
+    stringstyle=\color{stringstyle},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                   
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=xcodecolor}
+
+\usepackage[T1]{fontenc}
+\usepackage{cascadia-code}
+
+% Raised Rule Command:
+%  Arg 1 (Optional) - How high to raise the rule
+%  Arg 2            - Thickness of the rule
+\newcommand{\raisedrule}[2][0em]{\leaders\hbox{\rule[#1]{1pt}{#2}}\hfill}
+
+\setlength{\parindent}{0pt}
+\titleformat{\section}
+{\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\begin{document}
+
+	{\Large
+	\textbf{Rolling Stone(s)}}
+	
+	\vspace{0.4cm}
+	DiPS CodeJam 24\raisedrule[0.25em]{1pt}
+	\\
+	% document
+
+	\section*{Prompt}
+	You have discovered an ancient mechanism that involves a grid of stones used to balance an old structure. The grid is represented by a map where spherical stones (denoted by O) and angular stones (denoted by \#) are placed. The grid can tilt towards one side (up, down, right or left), and when tilted, results in the spherical stones not obstructed by angular stones in the tilt falling off the grid. This tiltable grid is paired with a receptacle to hold as many stones as possible.
+	
+	When the grid is tilted, spherical stones roll downwards, but cannot roll over angular stones. Angular stones stay fixed in place.
+	
+	Your task is to find out which way the grid can be tilted so that the least number of stones may be placed in the receptacle to balance the structure.
+
+	\subsection*{Input Format}
+	\begin{itemize}
+		\item The first line of the input contains two space-separated integers $m$ and $n$, denoting the number of rows and columns in the grid respectively.
+		\item The next $m$ lines contain $n$ space-separated characters each, denoting the map. O indicates a spherical stone, \# indicates an angular stone, and . indicates a blank space.
+	\end{itemize}
+	\subsection*{Output Format}
+	The first and only line of your output must contain a single integer $i$, denoting the least number of stones may be placed in the receptacle to balance the structure.
+	\subsection*{Constraints}
+	\begin{itemize}
+		\item $ 10^2 \le m ,n \le 10^3 $
+	\end{itemize}
+
+\section*{Sample Program}
+	\lstinputlisting[language=Python]{sampleSolution.py}
+	
+
+\end{document}
