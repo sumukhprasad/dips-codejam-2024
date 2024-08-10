@@ -1,0 +1,91 @@
+\documentclass[12pt]{report}
+\usepackage[a4paper, total={7.3in, 9.7in}]{geometry}
+\usepackage{amsmath}
+\usepackage{upquote}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{amssymb}
+
+\definecolor{backgroundcolor}{rgb}{1, 1, 1}
+\definecolor{commentstyle}{rgb}{0.365, 0.422, 0.475}
+\definecolor{keywordstyle}{rgb}{0.6, 0.14, 0.576}
+\definecolor{numberstyle}{rgb}{0.5, 0.5, 0.5}
+\definecolor{stringstyle}{rgb}{0.77, 0.1, 0.08}
+
+\lstdefinestyle{xcodecolor}{
+    backgroundcolor=\color{backgroundcolor},   
+    commentstyle=\color{commentstyle},
+    keywordstyle=\color{keywordstyle},
+    numberstyle=\scriptsize\color{numberstyle},
+    stringstyle=\color{stringstyle},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                   
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=xcodecolor}
+
+\usepackage[T1]{fontenc}
+\usepackage{cascadia-code}
+
+% Raised Rule Command:
+%  Arg 1 (Optional) - How high to raise the rule
+%  Arg 2            - Thickness of the rule
+\newcommand{\raisedrule}[2][0em]{\leaders\hbox{\rule[#1]{1pt}{#2}}\hfill}
+
+\setlength{\parindent}{0pt}
+\titleformat{\section}
+{\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\begin{document}
+
+	{\Large
+	\textbf{The Answer to Life, the Universe, and Everything}}
+	
+	\vspace{0.4cm}
+	DiPS CodeJam 24\raisedrule[0.25em]{1pt}
+	\\
+	% document
+
+	\section*{Prompt}
+	Hitchhiking through the galaxy, you come across a series of strange planetary systems -- where planets seem to be laid out in triangles. Only a few of these, however, can emit a certain type of radiation that you have been searching for, and the others cannot. Only the systems where the area bounded by the triangles is 42 square units can emit the required radiation. Given a set of $n$ coordinates for planets, can you find how many systems exist that emit the radiation you are looking for? Assume that systems can overlap.
+	
+	For example, given the coordinates $(0,0)$, $(0,28)$, $(3,9)$, and $(5,2)$, here are all the triangles and areas that can be formed:
+	\begin{itemize}
+		\item $(0,0)$, $(0,28)$, $(3,9)$, with an area of 42.
+		\item $(0,0)$, $(0,28)$, $(5,2)$, with an area of 70.
+		\item $(0,0)$, $(5,2)$, $(3,9)$, with an area of 19.5.
+		\item $(5,2)$, $(0,28)$, $(3,9)$, with an area of 8.5.
+	\end{itemize}
+	Only one system has an area of 42.
+	
+	
+	Hint 1: the number of triangles that can be formed by $n$ coordinates is equal to the number of \textbf{combinations} of points that can be chosen at random.\\
+	Hint 2: the area of a triangle represented by $A(x_1, y_1), B(x_2, y_2), B(x_3, y_3)$ is $\frac{1}{2}(x_1(y_2-y_3)+x_2(y_3-y_1)+x_3(y_1-y_2))$.
+
+	\subsection*{Input Format}
+	\begin{itemize}
+		\item The first line of the input contains an integer $n$, denoting the number of coordinates.
+		\item The next $n$ lines of the input each contain the space-separated coordinates of a planet.
+	\end{itemize}
+	\subsection*{Output Format}
+	The first and only line of your output must contain a single integer $m$, denoting the number of systems that produce the radiation you are looking for.
+	
+	\subsection*{Constraints}
+	\begin{itemize}
+		\item $ 10^2 \le n \le 10^3 $
+	\end{itemize}
+
+\section*{Sample Program}
+	\lstinputlisting[language=Python]{sampleSolution.py}
+	
+
+\end{document}
