@@ -1,0 +1,79 @@
+\documentclass[12pt]{report}
+\usepackage[a4paper, total={7.3in, 9.7in}]{geometry}
+\usepackage{amsmath}
+\usepackage{upquote}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{amssymb}
+
+\definecolor{backgroundcolor}{rgb}{1, 1, 1}
+\definecolor{commentstyle}{rgb}{0.365, 0.422, 0.475}
+\definecolor{keywordstyle}{rgb}{0.6, 0.14, 0.576}
+\definecolor{numberstyle}{rgb}{0.5, 0.5, 0.5}
+\definecolor{stringstyle}{rgb}{0.77, 0.1, 0.08}
+
+\lstdefinestyle{xcodecolor}{
+    backgroundcolor=\color{backgroundcolor},   
+    commentstyle=\color{commentstyle},
+    keywordstyle=\color{keywordstyle},
+    numberstyle=\scriptsize\color{numberstyle},
+    stringstyle=\color{stringstyle},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                   
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=xcodecolor}
+
+\usepackage[T1]{fontenc}
+\usepackage{cascadia-code}
+
+% Raised Rule Command:
+%  Arg 1 (Optional) - How high to raise the rule
+%  Arg 2            - Thickness of the rule
+\newcommand{\raisedrule}[2][0em]{\leaders\hbox{\rule[#1]{1pt}{#2}}\hfill}
+
+\setlength{\parindent}{0pt}
+\titleformat{\section}
+{\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\begin{document}
+
+	{\Large
+	\textbf{Does This FizzBuzz?}}
+	
+	\vspace{0.4cm}
+	DiPS CodeJam 24\raisedrule[0.25em]{1pt}
+	\\
+	% document
+
+	\section*{Prompt}
+	(from Wikipedia) Fizz buzz is a group word game for children to teach them about division. Players take turns to count incrementally, replacing any number divisible by three with the word ``fizz'', and any number divisible by five with the word ``buzz'', and any number divisible by both three and five with the word ``fizzbuzz''.
+	
+	Given a string $s$, determine if the string is a substring of some valid generalised fizzbuzz -- the factors are not 3 and 5. Tokens are completely covered (no half-words) and are space-separated. 
+	
+	\subsection*{Input Format}
+	\begin{itemize}
+		\item The first and only line of the input contains a space-separated string $s$.
+	\end{itemize}
+	\subsection*{Output Format}
+	The first and only line of your output must contain a single integer, 0 if the string is not valid FizzBuzz and 1 if the string is valid.
+	\subsection*{Constraints}
+	\begin{itemize}
+		\item $ 10**4 \le \text{size of s} \le 10**6 $
+		\item Assume that no string is purely comprised of alphabets (at least one number is present)
+	\end{itemize}
+	
+\section*{Sample Program}
+	\lstinputlisting[language=Python]{sampleSolution.py}
+	
+
+\end{document}
