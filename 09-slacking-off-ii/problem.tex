@@ -1,0 +1,86 @@
+\documentclass[12pt]{report}
+\usepackage[a4paper, total={7.3in, 9.7in}]{geometry}
+\usepackage{amsmath}
+\usepackage{upquote}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{amssymb}
+
+\definecolor{backgroundcolor}{rgb}{1, 1, 1}
+\definecolor{commentstyle}{rgb}{0.365, 0.422, 0.475}
+\definecolor{keywordstyle}{rgb}{0.6, 0.14, 0.576}
+\definecolor{numberstyle}{rgb}{0.5, 0.5, 0.5}
+\definecolor{stringstyle}{rgb}{0.77, 0.1, 0.08}
+
+\lstdefinestyle{xcodecolor}{
+    backgroundcolor=\color{backgroundcolor},   
+    commentstyle=\color{commentstyle},
+    keywordstyle=\color{keywordstyle},
+    numberstyle=\scriptsize\color{numberstyle},
+    stringstyle=\color{stringstyle},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                   
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=xcodecolor}
+
+\usepackage[T1]{fontenc}
+\usepackage{cascadia-code}
+
+% Raised Rule Command:
+%  Arg 1 (Optional) - How high to raise the rule
+%  Arg 2            - Thickness of the rule
+\newcommand{\raisedrule}[2][0em]{\leaders\hbox{\rule[#1]{1pt}{#2}}\hfill}
+
+\setlength{\parindent}{0pt}
+\titleformat{\section}
+{\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\begin{document}
+
+	{\Large
+	\textbf{Slacking Off II}}
+	
+	\vspace{0.4cm}
+	DiPS CodeJam 24\raisedrule[0.25em]{1pt}
+	\\
+	% document
+
+	\section*{Prompt}
+	Bobby, having having figured out how many programs he can compile, sits down and starts compiling. Bobby now sees a problem -- in his quest for longer compile times, he's made a small error (I'll let you figure this one out yourself): 
+	
+	\texttt{class X: Y {}}\\
+	\texttt{class Y: X {}}
+	
+	So he makes another list -- this time denoting which classes are subclasses of which other classes. Can you find out if such a `transitive equality' of \textbf{two} classes is present in the code?
+
+
+	Hint: this can also be expressed as a graph theory problem -- \emph{Given an undirected graph and a vertex in the graph, find the number of vertices in its connected component.}
+	
+	\subsection*{Input Format}
+	\begin{itemize}
+		\item The first line of the input contains an integer $n$, denoting the number of lists.
+		\item The next $n$ lines of the input each contain a space separated list of values conforming to $X=Y$, where X and Y denote class names.
+	\end{itemize}
+	\subsection*{Output Format}
+	The first and only line of your output must contain a single integer $m$, denoting the number of lists where a transitive equality exists.
+	\subsection*{Constraints}
+	\begin{itemize}
+		\item $ 10^2 \le n \le 10^3 $
+		\item The size of each list varies between $10^2$ and $10^3$ elements.
+	\end{itemize}
+
+\section*{Sample Program}
+	\lstinputlisting[language=Python]{sampleSolution.py}
+	
+
+\end{document}
