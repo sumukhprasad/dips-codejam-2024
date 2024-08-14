@@ -1,0 +1,117 @@
+\documentclass[12pt]{report}
+\usepackage[a4paper, total={7.3in, 9.7in}]{geometry}
+\usepackage{amsmath}
+\usepackage{upquote}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{amssymb}
+
+\definecolor{backgroundcolor}{rgb}{1, 1, 1}
+\definecolor{commentstyle}{rgb}{0.365, 0.422, 0.475}
+\definecolor{keywordstyle}{rgb}{0.6, 0.14, 0.576}
+\definecolor{numberstyle}{rgb}{0.5, 0.5, 0.5}
+\definecolor{stringstyle}{rgb}{0.77, 0.1, 0.08}
+
+\lstdefinestyle{xcodecolor}{
+    backgroundcolor=\color{backgroundcolor},   
+    commentstyle=\color{commentstyle},
+    keywordstyle=\color{keywordstyle},
+    numberstyle=\scriptsize\color{numberstyle},
+    stringstyle=\color{stringstyle},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                   
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=xcodecolor}
+
+\usepackage[T1]{fontenc}
+\usepackage{cascadia-code}
+
+% Raised Rule Command:
+%  Arg 1 (Optional) - How high to raise the rule
+%  Arg 2            - Thickness of the rule
+\newcommand{\raisedrule}[2][0em]{\leaders\hbox{\rule[#1]{1pt}{#2}}\hfill}
+
+\setlength{\parindent}{0pt}
+\titleformat{\section}
+{\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\begin{document}
+
+	{\Large
+	\textbf{Esolang}}
+	
+	\vspace{0.4cm}
+	DiPS CodeJam 24\raisedrule[0.25em]{1pt}
+	\\
+	% document
+
+	\section*{Prompt}
+	Pranav and Prithvi are back from last year, and this time they're on an adventure to find the secret lost treasure in an ancient Japanese ruin. They realise that the secret to where the treasure lies is hidden in a coded message -- one that is represented by some strange symbols. They discover these haikus, corresponding to the structure of the lines (translated to English, of course):
+	
+	\texttt{@ \& -}\\
+	\textit{Variable breathes life,\\
+	Value whispers in its ear,\\
+	New dawn for the name.}
+	
+	\texttt{+ \& -}\\
+	\textit{Value joins the dance,\\
+	Increasing as shadows grow,\\
+	Addition's soft grace.}
+	
+	\texttt{* \& -}\\
+	\textit{Strength of numbers blend,\\
+	Variable's power grows,\\
+	Multiplication.}
+	
+	\texttt{/ \& -}\\
+	\textit{Splitting parts with care,\\
+	Division by quiet force,\\
+	Fair share to the whole.}
+	
+	\texttt{\# -}\\
+	\textit{Echo of the name,\\
+	Whispers truth from within code,\\
+	Value in the light.}
+	
+	\texttt{!}\\
+	\textit{End of tales unfolds,\\
+	A sudden halt to the quest,\\
+	Silence speaks in code.}
+	
+	Pranav and Prithvi have deciphered these to mean that the coded message is written in some esoteric language, and the syntax is given by the symbols before the haikus. The ampersand represents the name of some variable, and the hyphen represents some numerical value.
+	
+	For example:\\
+	\texttt{@ x 3} means ``Set x to 3''\\
+	\texttt{+ x 4} means ``Add 4 to x''\\
+	\texttt{* x 8} means ``Multiply x by 8''\\
+	\texttt{/ x 2} means ``Divide x by 2''\\
+	\texttt{- x 5} means ``Subtract 5 from x''\\
+	\texttt{\# x} means ``Print x'' (print statements print on new lines and \textbf{not} on the same line)\\
+	\texttt{!} means ``Stop decoding here'' (ignore all further statements)
+	and reveals the coded message $23$.
+	
+	Given a message that is $n$ lines long, can you figure out the secret code?
+
+	\subsection*{Input Format}
+	\begin{itemize}
+		\item The first line of the input contains an integer $n$, denoting the number of lines.
+		\item The next $n$ lines of the input each contain the encoded message.
+	\end{itemize}
+	\subsection*{Output Format}
+	Your output should contain the decoded message. If there is no decoded message, type in \texttt{no output}.
+
+\section*{Sample Program}
+	\lstinputlisting[language=Python]{sampleSolution.py}
+	
+
+\end{document}
