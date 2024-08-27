@@ -23,12 +23,14 @@ def solve(s):
 	
 	
 for i in range(0, 20):
-	s = ''.join(random.choices(string.hexdigits, k=random.randint(10**4, 10**6)))
+	n_char=random.randint(10**4, 10**6)
+	s = ''.join(random.choices(string.hexdigits, k=n_char))
 	ioArr = [s.upper(), str(solve(s))]
 
 	n = str(i).zfill(2)
 
 	inputFile = open(f'./testCases/input/input{n}.txt', 'a')
+	inputFile.write(f"{n_char}\n")
 	inputFile.write(ioArr[0])
 	inputFile.close()
 	
