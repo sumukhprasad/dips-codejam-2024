@@ -16,7 +16,7 @@ $7-6=1, 3-7=-4, 8-3=5$
 
 They would not follow the same pattern.
 
-You have a list of $n$ pairs of numbers which you must check to see if they satisfy the given condition. If there are $m$ pairs where the numbers follow the same pattern, what is the sum of all digits of $\sqrt{m}$, if the value is rounded up to the next integer?
+You have a list of $n$ pairs of numbers which you must check to see if they satisfy the given condition. If there are $m$ pairs where the numbers follow the same pattern, what is the sum of all digits of $\sqrt{m}$, if the value is rounded down to the previous integer?
 
 ### Input Format
 -  The first line of the input contains an integer $n$, denoting the number of test cases.
