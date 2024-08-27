@@ -12,7 +12,8 @@ To determine whether a substring is a shade of green or not, check for the follo
 Given a string of length $n$, how many substrings can you find that satisfy the conditions?
 
 ### Input Format
-The first line of the input contains a string of length $n$ containing numbers and uppercase letters.
+- The first line of the input contains the integer $n$.
+- The second line of the input contains a string of length $n$ containing numbers and uppercase letters.
 
 ### Output Format
 The first and only line of your output must contain a single integer $m$, denoting the the number of substrings that satisfy the conditions.
