@@ -8,7 +8,7 @@ Here is a simple road:
 
 **3====7==========4==**
 
-I cross 4 unit distances at 3u/s, 10 unit distances at 7u/s and 2 unit distances at 4u/s. So the time I take to cross the road is $\frac{4}{3}+\frac{10}{7}+\frac{2}{4} = 1.33+0.7+0.5 = 3.26$. If the numbers represented the speed limits, the minimum time required to cross the road is 2.35s. 
+I cross 4 unit distances at 3u/s, 10 unit distances at 7u/s and 2 unit distances at 4u/s. So the time I take to cross the road is $\frac{4}{3}+\frac{10}{7}+\frac{2}{4} = 1.33+0.7+0.5 = 3.26$. If the numbers represented the speed limits, the minimum time required to cross the road is 3.26s. 
 
 Given a road like the ones above and the time I took to cross the road, can you tell me if I was speeding?
 
